@@ -1,0 +1,45 @@
+{
+  "name": "tacticsweaver-local-server",
+  "version": "1.2.5",
+  "description": "TacticsWeaver local machine server",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",    
+    "build": "electron-builder --arm64 --linux appImage"
+  },
+  "author": "JNJ Instrument.",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "electron-updater": "^6.2.1",
+    "express": "^4.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tacticsweaver/electron-monitor.git"
+  },
+  "build": {    
+    "appId": "com.tacticsweaver.local-svr",    
+    "linux": {
+      "target": ["appImage"]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "tacticsweaver",
+        "repo": "electron-monitor"
+      }
+    ],
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json"
+    ]
+  }
+}
